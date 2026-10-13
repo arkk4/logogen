@@ -1,0 +1,9 @@
+# Node artifacts
+node_modules/
+
+# macOS
+.DS_Store
+
+# Lint/editor
+.env
+*.tmp

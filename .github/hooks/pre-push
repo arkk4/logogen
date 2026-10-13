@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+# Guard hook: ensure version and branding assets are committed before pushing
+TARGET_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$TARGET_BRANCH" = "main" ]; then
+  DIRTY=$(git status --porcelain version.json public/logo.svg public/badge.svg)
+  if [ -n "$DIRTY" ]; then
+    echo "❌ [pre-push] Uncommitted version or asset changes:"
+    echo "$DIRTY"
+    echo "   Run 'make bump' and commit before pushing."
+    exit 1
+  fi
+fi
+
+exit 0

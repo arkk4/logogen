@@ -1,0 +1,12 @@
+{
+  "name": "logogen",
+  "version": "2026.10.13",
+  "date": "2026-10-13",
+  "codename": "",
+  "logo": {
+    "pattern": "mirror",
+    "palette": "#09090b,#27272a,#52525b,#a1a1aa,#e4e4e7",
+    "shape": "squircle",
+    "font": "mono"
+  }
+}
