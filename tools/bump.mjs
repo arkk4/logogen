@@ -44,6 +44,6 @@ console.log(`✓ Updated version.json to ${newVersion}`);
 console.log('Generating logo and badge...');
 execFileSync('node', [resolve(__dirname, 'generate_logo.mjs')], { stdio: 'inherit' });
 
-execFileSync('git', ['add', 'version.json', 'public/logo.svg', 'public/badge.svg'], { cwd: repoRoot, stdio: 'inherit' });
+execFileSync('git', ['add', 'version.json', 'public/logo.svg', 'public/logo.png', 'public/badge.svg'], { cwd: repoRoot, stdio: 'inherit' });
 execFileSync('git', ['commit', '-m', `chore(release): v${newVersion}`], { cwd: repoRoot, stdio: 'inherit' });
 console.log(`\n🎉 Bumped and committed v${newVersion}! Run 'git push' to publish.`);
